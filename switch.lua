@@ -24,5 +24,4 @@ function switch.Switch(value)
     local self = setmetatable({value = value}, tab)
     return self
 end
-
 return switch
