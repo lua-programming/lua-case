@@ -2,16 +2,19 @@ local switch = require 'switch'
 
 local value = 'hello world'
 
-local val = switch.switch(value)
+local v = switch.Switch(value)
 
-val:case('hello world', function(v)
-    print('Switch:', v)
+v:Case('hello world', function(tx)
+    print('Switch:', tx)
+    v:Break()
 end, value)
 
-val:case('test', function(v)
-    print('Switch:', v)
+v:Case('test', function(tx)
+    print('Switch:', tx)
+    v:Break()
 end, value)
 
-val:default(function()
+v:Default(function()
     print('Switch:', 'default')
+    v:Break()
 end)
